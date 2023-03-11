@@ -21,6 +21,7 @@ while True:
             file.close()
 
             for index, item in enumerate(todos):
+                item = item.strip('\n')
                 item = item.title()
                 print(f"{index+1}-{item}")
         case 'edit':
