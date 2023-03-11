@@ -1,4 +1,2 @@
-keep
 play
-throw
 clean
