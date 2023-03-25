@@ -12,11 +12,17 @@ def add_todo():
 st.title('To-Do App')
 st.subheader('This to-do app will increase your productivity')
 
-unique_value = 0
-for todo in todos:
-    unique_value += 1
-    st.checkbox(todo, key=f"todo{unique_value}")
+
+for index, todo in enumerate(todos):
+    checkbox = st.checkbox(todo, key=todo)
+    if checkbox:
+        todos.pop(index)
+        functions.write_todos(todos)
+        del st.session_state[todo]
+        st.experimental_rerun()
 
 st.text_input(label="", placeholder="Add new todo...",
               on_change=add_todo, key="new_todo")
 
+print("hello")
+st.session_state
