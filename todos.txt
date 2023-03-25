@@ -6,5 +6,3 @@ exercising
 hangout
 play piano
 stay up
-
-
